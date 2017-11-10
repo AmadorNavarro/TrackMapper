@@ -7,7 +7,15 @@
 //
 
 import Foundation
+import RxSwift
 
 final class MapViewModel: BaseViewModel {
+    
+    let switchOnState = BehaviorSubject(value: false)
+    let switchTitle = BehaviorSubject(value: "Seguir ruta")
+    
+    func changeSwitchState(_ newState: Bool) {
+        switchOnState.onNext(newState)
+    }
     
 }

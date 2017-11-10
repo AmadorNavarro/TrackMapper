@@ -15,6 +15,8 @@ class MapViewController: BaseViewController<MapViewModel>, MKMapViewDelegate {
     static let baseRegionWidth: CLLocationDistance = 350.0
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var trackSwitch: UISwitch!
+    @IBOutlet weak var switchTitleLabel: UILabel!
     
     override func createViewModel() -> MapViewModel {
         return MapViewModel()
@@ -26,6 +28,28 @@ class MapViewController: BaseViewController<MapViewModel>, MKMapViewDelegate {
         checkAuthorizationStatus()
     }
     
+    override func setupLayout() {
+        super.setupLayout()
+        
+        switchTitleLabel.font = UIFont.boldSystemFont(ofSize: 15)
+        switchTitleLabel.textColor = .blue
+        trackSwitch.tintColor = .white
+        trackSwitch.onTintColor = .blue
+    }
+    
+    override func setupRx() {
+        super.setupRx()
+        
+        viewModel.switchTitle.bind(to: switchTitleLabel.rx.text).addDisposableTo(disposeBag)
+        
+        trackSwitch.rx.isOn.subscribe(onNext: { [weak self] on in
+            guard let `self` = self else { return }
+            
+            self.viewModel.changeSwitchState(on)
+        }).addDisposableTo(disposeBag)
+    }
+    
+    // MARK: - private funcs
     private func updatedUserLocation(with status: CLAuthorizationStatus) {
         mapView.showsUserLocation = (status == .authorizedAlways || status == .authorizedWhenInUse)
     }
