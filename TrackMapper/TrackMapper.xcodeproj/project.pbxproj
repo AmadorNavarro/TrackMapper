@@ -18,6 +18,9 @@
 		4F3B83F91FB6111C000E02C0 /* BaseViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B83F21FB6111C000E02C0 /* BaseViewControllerDelegate.swift */; };
 		4F3B83FA1FB6111C000E02C0 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B83F31FB6111C000E02C0 /* Wireframe.swift */; };
 		4F3B84021FB64DF7000E02C0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B84011FB64DF7000E02C0 /* Default-568h@2x.png */; };
+		4F413D781FB65173003BA439 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F413D761FB65173003BA439 /* MapViewController.swift */; };
+		4F413D791FB65173003BA439 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F413D771FB65173003BA439 /* MapViewController.xib */; };
+		4F413D7B1FB65183003BA439 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F413D7A1FB65183003BA439 /* MapViewModel.swift */; };
 		9C09FCB5A290C099A0EC5A37 /* Pods_TrackMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F528A88910A4BDE5170CF8E2 /* Pods_TrackMapper.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +38,9 @@
 		4F3B83F21FB6111C000E02C0 /* BaseViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewControllerDelegate.swift; sourceTree = "<group>"; };
 		4F3B83F31FB6111C000E02C0 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		4F3B84011FB64DF7000E02C0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4F413D761FB65173003BA439 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4F413D771FB65173003BA439 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		4F413D7A1FB65183003BA439 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		85C2772E2F70FD35CDDA2EFC /* Pods-TrackMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrackMapper/Pods-TrackMapper.release.xcconfig"; sourceTree = "<group>"; };
 		ED7C8AB13F5E28037EEE17C3 /* Pods-TrackMapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMapper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrackMapper/Pods-TrackMapper.debug.xcconfig"; sourceTree = "<group>"; };
 		F528A88910A4BDE5170CF8E2 /* Pods_TrackMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +145,7 @@
 		4F3B83FB1FB61154000E02C0 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				4F413D741FB6513A003BA439 /* UI */,
 				4F3B83FE1FB61187000E02C0 /* Resources */,
 			);
 			path = App;
@@ -167,6 +174,24 @@
 				4F3B83E21FB60E62000E02C0 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		4F413D741FB6513A003BA439 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4F413D751FB6515E003BA439 /* MapView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		4F413D751FB6515E003BA439 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				4F413D761FB65173003BA439 /* MapViewController.swift */,
+				4F413D771FB65173003BA439 /* MapViewController.xib */,
+				4F413D7A1FB65183003BA439 /* MapViewModel.swift */,
+			);
+			path = MapView;
 			sourceTree = "<group>";
 		};
 		D30A17BFB57576E1005A44DB /* Pods */ = {
@@ -244,6 +269,7 @@
 				4F3B83E11FB60E62000E02C0 /* LaunchScreen.storyboard in Resources */,
 				4F3B83DE1FB60E62000E02C0 /* Assets.xcassets in Resources */,
 				4F3B84021FB64DF7000E02C0 /* Default-568h@2x.png in Resources */,
+				4F413D791FB65173003BA439 /* MapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,9 +329,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3B83F91FB6111C000E02C0 /* BaseViewControllerDelegate.swift in Sources */,
+				4F413D7B1FB65183003BA439 /* MapViewModel.swift in Sources */,
 				4F3B83F61FB6111C000E02C0 /* BaseWireframe.swift in Sources */,
 				4F3B83F51FB6111C000E02C0 /* BaseViewModel.swift in Sources */,
 				4F3B83D71FB60E62000E02C0 /* AppDelegate.swift in Sources */,
+				4F413D781FB65173003BA439 /* MapViewController.swift in Sources */,
 				4F3B83FA1FB6111C000E02C0 /* Wireframe.swift in Sources */,
 				4F3B83F41FB6111C000E02C0 /* BaseViewController.swift in Sources */,
 				4F3B83F71FB6111C000E02C0 /* Constants.swift in Sources */,
