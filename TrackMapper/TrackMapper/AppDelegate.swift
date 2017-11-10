@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  TrackMapper
 //
-//  Created by BeRepublic on 10/11/2017.
-//  Copyright © 2017 opentrends. All rights reserved.
+//  Created by Amador Navarro on 10/11/2017.
+//  Copyright © 2017 Amador Navarro. All rights reserved.
 //
 
 import UIKit

@@ -1,0 +1,21 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '10.0'
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+# Common Pods for every TrackMapper target
+def TrackMapperSharedPods
+  pod 'SnapKit', '~> 3.2.0'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Action'
+  pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher', :branch => 'swift3'
+end
+
+target 'TrackMapper' do
+ use_frameworks!
+
+ # Pods for TrackMapper
+ TrackMapperSharedPods()
+end
