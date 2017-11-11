@@ -21,6 +21,12 @@
 		4F413D781FB65173003BA439 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F413D761FB65173003BA439 /* MapViewController.swift */; };
 		4F413D791FB65173003BA439 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F413D771FB65173003BA439 /* MapViewController.xib */; };
 		4F413D7B1FB65183003BA439 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F413D7A1FB65183003BA439 /* MapViewModel.swift */; };
+		4F413D7E1FB67150003BA439 /* DATAStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F413D7D1FB67150003BA439 /* DATAStack.swift */; };
+		4F413D821FB67508003BA439 /* TrackMapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F413D7F1FB67205003BA439 /* TrackMapper.xcdatamodeld */; };
+		4FC402991FB68268000546E5 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC402951FB68268000546E5 /* Coordinate.swift */; };
+		4FC4029A1FB68268000546E5 /* _Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC402961FB68268000546E5 /* _Journey.swift */; };
+		4FC4029B1FB68268000546E5 /* _Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC402971FB68268000546E5 /* _Coordinate.swift */; };
+		4FC4029C1FB68268000546E5 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC402981FB68268000546E5 /* Journey.swift */; };
 		9C09FCB5A290C099A0EC5A37 /* Pods_TrackMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F528A88910A4BDE5170CF8E2 /* Pods_TrackMapper.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +47,12 @@
 		4F413D761FB65173003BA439 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4F413D771FB65173003BA439 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		4F413D7A1FB65183003BA439 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		4F413D7D1FB67150003BA439 /* DATAStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DATAStack.swift; sourceTree = "<group>"; };
+		4F413D801FB67205003BA439 /* TrackMapper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrackMapper.xcdatamodel; sourceTree = "<group>"; };
+		4FC402951FB68268000546E5 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		4FC402961FB68268000546E5 /* _Journey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _Journey.swift; sourceTree = "<group>"; };
+		4FC402971FB68268000546E5 /* _Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _Coordinate.swift; sourceTree = "<group>"; };
+		4FC402981FB68268000546E5 /* Journey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
 		85C2772E2F70FD35CDDA2EFC /* Pods-TrackMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrackMapper/Pods-TrackMapper.release.xcconfig"; sourceTree = "<group>"; };
 		ED7C8AB13F5E28037EEE17C3 /* Pods-TrackMapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMapper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrackMapper/Pods-TrackMapper.debug.xcconfig"; sourceTree = "<group>"; };
 		F528A88910A4BDE5170CF8E2 /* Pods_TrackMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +166,7 @@
 		4F3B83FC1FB6116C000E02C0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4F413D7C1FB67150003BA439 /* CoreData */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -192,6 +205,19 @@
 				4F413D7A1FB65183003BA439 /* MapViewModel.swift */,
 			);
 			path = MapView;
+			sourceTree = "<group>";
+		};
+		4F413D7C1FB67150003BA439 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4F413D7D1FB67150003BA439 /* DATAStack.swift */,
+				4F413D7F1FB67205003BA439 /* TrackMapper.xcdatamodeld */,
+				4FC402971FB68268000546E5 /* _Coordinate.swift */,
+				4FC402961FB68268000546E5 /* _Journey.swift */,
+				4FC402951FB68268000546E5 /* Coordinate.swift */,
+				4FC402981FB68268000546E5 /* Journey.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		D30A17BFB57576E1005A44DB /* Pods */ = {
@@ -330,13 +356,19 @@
 			files = (
 				4F3B83F91FB6111C000E02C0 /* BaseViewControllerDelegate.swift in Sources */,
 				4F413D7B1FB65183003BA439 /* MapViewModel.swift in Sources */,
+				4F413D7E1FB67150003BA439 /* DATAStack.swift in Sources */,
 				4F3B83F61FB6111C000E02C0 /* BaseWireframe.swift in Sources */,
+				4FC4029C1FB68268000546E5 /* Journey.swift in Sources */,
 				4F3B83F51FB6111C000E02C0 /* BaseViewModel.swift in Sources */,
 				4F3B83D71FB60E62000E02C0 /* AppDelegate.swift in Sources */,
+				4FC4029A1FB68268000546E5 /* _Journey.swift in Sources */,
 				4F413D781FB65173003BA439 /* MapViewController.swift in Sources */,
 				4F3B83FA1FB6111C000E02C0 /* Wireframe.swift in Sources */,
+				4FC4029B1FB68268000546E5 /* _Coordinate.swift in Sources */,
 				4F3B83F41FB6111C000E02C0 /* BaseViewController.swift in Sources */,
+				4FC402991FB68268000546E5 /* Coordinate.swift in Sources */,
 				4F3B83F71FB6111C000E02C0 /* Constants.swift in Sources */,
+				4F413D821FB67508003BA439 /* TrackMapper.xcdatamodeld in Sources */,
 				4F3B83F81FB6111C000E02C0 /* UIViewController+CLLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +550,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4F413D7F1FB67205003BA439 /* TrackMapper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4F413D801FB67205003BA439 /* TrackMapper.xcdatamodel */,
+			);
+			currentVersion = 4F413D801FB67205003BA439 /* TrackMapper.xcdatamodel */;
+			path = TrackMapper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4F3B83CB1FB60E62000E02C0 /* Project object */;
 }
