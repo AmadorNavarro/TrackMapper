@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-protocol SeatLocationDelegate {
+protocol LocationDelegate {
     func updatedLocation(locations: [CLLocation])
 }
 
@@ -20,9 +20,9 @@ extension UIViewController: CLLocationManagerDelegate {
         static var locationDelegate = "cll_delegate"
     }
     
-    var delegateLocation: SeatLocationDelegate? {
+    var delegateLocation: LocationDelegate? {
         get {
-            return objc_getAssociatedObject(self, &LocationKeys.locationDelegate) as? SeatLocationDelegate
+            return objc_getAssociatedObject(self, &LocationKeys.locationDelegate) as? LocationDelegate
         }
         set {
             objc_setAssociatedObject(self, &LocationKeys.locationDelegate, newValue ?? nil, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -46,10 +46,12 @@ extension UIViewController: CLLocationManagerDelegate {
         if let locationManager = self.locationManager {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.allowsBackgroundLocationUpdates = true
+            locationManager.pausesLocationUpdatesAutomatically = false
             if CLLocationManager.locationServicesEnabled() {
                 switch CLLocationManager.authorizationStatus() {
                 case .notDetermined:
-                    locationManager.requestWhenInUseAuthorization()
+                    locationManager.requestAlwaysAuthorization()
                 case .authorizedWhenInUse, .authorizedAlways:
                     locationManager.startUpdatingLocation()
                 default:
