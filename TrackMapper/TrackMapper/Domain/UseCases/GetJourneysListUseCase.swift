@@ -12,6 +12,6 @@ import RxSwift
 
 protocol GetJourneysListUseCase {
     
-    func execute() -> Single<[JourneyEntity]>
+    func execute() -> Single<[JourneyModel]>
     
 }
