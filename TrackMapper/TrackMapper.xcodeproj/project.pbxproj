@@ -25,6 +25,11 @@
 		4F413D821FB67508003BA439 /* TrackMapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F413D7F1FB67205003BA439 /* TrackMapper.xcdatamodeld */; };
 		4F9917C21FB843EE00541919 /* JourneyDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9917C11FB843EE00541919 /* JourneyDataMapper.swift */; };
 		4F9917C41FB844E200541919 /* CoordinateDateMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9917C31FB844E200541919 /* CoordinateDateMapper.swift */; };
+		4F9917C71FB8E80500541919 /* JourneysListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9917C61FB8E80500541919 /* JourneysListView.swift */; };
+		4F9917C91FB8F09A00541919 /* JourneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9917C81FB8F09A00541919 /* JourneyCell.swift */; };
+		4F9917CC1FB8F0D800541919 /* JourneyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9917CB1FB8F0D800541919 /* JourneyCell.xib */; };
+		4F9917CE1FB8F22200541919 /* JourneyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9917CD1FB8F22200541919 /* JourneyCellViewModel.swift */; };
+		4F9917D11FB8F96500541919 /* JourneysListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9917D01FB8F96500541919 /* JourneysListViewModel.swift */; };
 		4FC402991FB68268000546E5 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC402951FB68268000546E5 /* Coordinate.swift */; };
 		4FC4029A1FB68268000546E5 /* _Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC402961FB68268000546E5 /* _Journey.swift */; };
 		4FC4029B1FB68268000546E5 /* _Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC402971FB68268000546E5 /* _Coordinate.swift */; };
@@ -69,6 +74,11 @@
 		4F413D801FB67205003BA439 /* TrackMapper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrackMapper.xcdatamodel; sourceTree = "<group>"; };
 		4F9917C11FB843EE00541919 /* JourneyDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyDataMapper.swift; sourceTree = "<group>"; };
 		4F9917C31FB844E200541919 /* CoordinateDateMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateDateMapper.swift; sourceTree = "<group>"; };
+		4F9917C61FB8E80500541919 /* JourneysListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneysListView.swift; sourceTree = "<group>"; };
+		4F9917C81FB8F09A00541919 /* JourneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCell.swift; sourceTree = "<group>"; };
+		4F9917CB1FB8F0D800541919 /* JourneyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JourneyCell.xib; sourceTree = "<group>"; };
+		4F9917CD1FB8F22200541919 /* JourneyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCellViewModel.swift; sourceTree = "<group>"; };
+		4F9917D01FB8F96500541919 /* JourneysListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneysListViewModel.swift; sourceTree = "<group>"; };
 		4FC402951FB68268000546E5 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		4FC402961FB68268000546E5 /* _Journey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _Journey.swift; sourceTree = "<group>"; };
 		4FC402971FB68268000546E5 /* _Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _Coordinate.swift; sourceTree = "<group>"; };
@@ -197,6 +207,7 @@
 			children = (
 				4FC402B31FB7B4D1000546E5 /* Model */,
 				4F413D741FB6513A003BA439 /* UI */,
+				4F9917C51FB8E7BC00541919 /* Components */,
 				4F3B83FE1FB61187000E02C0 /* Resources */,
 			);
 			path = App;
@@ -260,6 +271,34 @@
 				4FC402961FB68268000546E5 /* _Journey.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		4F9917C51FB8E7BC00541919 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4F9917CF1FB8F3B300541919 /* JourneyListView */,
+				4F9917CA1FB8F0A000541919 /* JourneyCell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4F9917CA1FB8F0A000541919 /* JourneyCell */ = {
+			isa = PBXGroup;
+			children = (
+				4F9917C81FB8F09A00541919 /* JourneyCell.swift */,
+				4F9917CB1FB8F0D800541919 /* JourneyCell.xib */,
+				4F9917CD1FB8F22200541919 /* JourneyCellViewModel.swift */,
+			);
+			path = JourneyCell;
+			sourceTree = "<group>";
+		};
+		4F9917CF1FB8F3B300541919 /* JourneyListView */ = {
+			isa = PBXGroup;
+			children = (
+				4F9917C61FB8E80500541919 /* JourneysListView.swift */,
+				4F9917D01FB8F96500541919 /* JourneysListViewModel.swift */,
+			);
+			path = JourneyListView;
 			sourceTree = "<group>";
 		};
 		4FC4029D1FB6EFE9000546E5 /* UseCases */ = {
@@ -418,6 +457,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F9917CC1FB8F0D800541919 /* JourneyCell.xib in Resources */,
 				4F3B83E11FB60E62000E02C0 /* LaunchScreen.storyboard in Resources */,
 				4F3B83DE1FB60E62000E02C0 /* Assets.xcassets in Resources */,
 				4F3B84021FB64DF7000E02C0 /* Default-568h@2x.png in Resources */,
@@ -495,7 +535,9 @@
 				4F413D7E1FB67150003BA439 /* DATAStack.swift in Sources */,
 				4FC402BE1FB7B632000546E5 /* JourneyEntity.swift in Sources */,
 				4FC402A21FB6F0A4000546E5 /* AddJourneyUseCaseImpl.swift in Sources */,
+				4F9917D11FB8F96500541919 /* JourneysListViewModel.swift in Sources */,
 				4F3B83F61FB6111C000E02C0 /* BaseWireframe.swift in Sources */,
+				4F9917C91FB8F09A00541919 /* JourneyCell.swift in Sources */,
 				4FC4029C1FB68268000546E5 /* Journey.swift in Sources */,
 				4FC402C61FB7B987000546E5 /* GetJourneysListUseCase.swift in Sources */,
 				4F3B83F51FB6111C000E02C0 /* BaseViewModel.swift in Sources */,
@@ -512,6 +554,8 @@
 				4F3B83F41FB6111C000E02C0 /* BaseViewController.swift in Sources */,
 				4FC402991FB68268000546E5 /* Coordinate.swift in Sources */,
 				4F3B83F71FB6111C000E02C0 /* Constants.swift in Sources */,
+				4F9917C71FB8E80500541919 /* JourneysListView.swift in Sources */,
+				4F9917CE1FB8F22200541919 /* JourneyCellViewModel.swift in Sources */,
 				4F413D821FB67508003BA439 /* TrackMapper.xcdatamodeld in Sources */,
 				4F3B83F81FB6111C000E02C0 /* UIViewController+CLLocation.swift in Sources */,
 			);

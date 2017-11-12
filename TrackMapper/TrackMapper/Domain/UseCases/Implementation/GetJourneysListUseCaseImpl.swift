@@ -15,8 +15,10 @@ final class GetJourneysListUseCaseImpl: BaseUseCaseImpl<TrackerRepository>, GetJ
         super.init(repository: TrackerRepositoryImpl())
     }
     
-    func execute() -> Single<[JourneyEntity]> {
-        return repository.journeysList()
+    func execute() -> Single<[JourneyModel]> {
+        return repository.journeysList().map { journeyEntities -> [JourneyModel] in
+            return JourneyModelDataMapper().transform(entityList: journeyEntities)
+        }
     }
     
 }
