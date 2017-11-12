@@ -2,7 +2,6 @@ PODS:
   - Action (3.2.0):
     - RxCocoa (~> 3.4)
     - RxSwift (~> 3.4)
-  - Kingfisher (3.13.1)
   - RxCocoa (3.6.1):
     - RxSwift (~> 3.6)
   - RxSwift (3.6.1)
@@ -10,28 +9,16 @@ PODS:
 
 DEPENDENCIES:
   - Action
-  - Kingfisher (from `https://github.com/onevcat/Kingfisher`, branch `swift3`)
   - RxCocoa
   - RxSwift
   - SnapKit (~> 3.2.0)
 
-EXTERNAL SOURCES:
-  Kingfisher:
-    :branch: swift3
-    :git: https://github.com/onevcat/Kingfisher
-
-CHECKOUT OPTIONS:
-  Kingfisher:
-    :commit: 2fbbffe2a2b501d92933a544b4c48ea4d6a4dc3a
-    :git: https://github.com/onevcat/Kingfisher
-
 SPEC CHECKSUMS:
   Action: 991c9e175e04675028724868768aa08f22c85476
-  Kingfisher: b09963a87ce1fc156d358ca62662a9b43c6b9172
   RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: 733e4b6aeb77ce2de68a6c7528420aab54706370
+PODFILE CHECKSUM: 7a4335dd02be2ba7e48fce845f297d636adbd952
 
 COCOAPODS: 1.2.1

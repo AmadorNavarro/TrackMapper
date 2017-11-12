@@ -10,7 +10,6 @@ def TrackMapperSharedPods
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Action'
-  pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher', :branch => 'swift3'
 end
 
 target 'TrackMapper' do
