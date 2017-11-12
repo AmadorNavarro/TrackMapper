@@ -18,6 +18,8 @@ class MapViewController: BaseViewController<MapViewModel>, MKMapViewDelegate {
     @IBOutlet weak var trackSwitch: UISwitch!
     @IBOutlet weak var switchTitleLabel: UILabel!
     
+    var polygon = MKPolygon()
+    
     override func createViewModel() -> MapViewModel {
         return MapViewModel()
     }
@@ -46,6 +48,14 @@ class MapViewController: BaseViewController<MapViewModel>, MKMapViewDelegate {
             
             on ? self.viewModel.initJourney() : self.viewModel.sendJourney()
         }).addDisposableTo(disposeBag)
+        
+        viewModel.drawPathAction.inputs.subscribe(onNext: { [weak self] locations in
+            guard let `self` = self else { return }
+            
+            self.mapView.remove(self.polygon)
+            self.polygon = MKPolygon(coordinates: locations, count: locations.count)
+            self.mapView.add(self.polygon)
+        }).addDisposableTo(disposeBag)
     }
     
     // MARK: - private funcs
@@ -59,6 +69,14 @@ class MapViewController: BaseViewController<MapViewModel>, MKMapViewDelegate {
     }
     
     // MARK: - MKMapViewDelegate
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: self.polygon)
+        renderer.strokeColor = .red
+        renderer.lineWidth = 3.0
+        return renderer
+    }
+    
+    // MARK: - CLLocationManagerDelegate
     override func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         updatedUserLocation(with: status)
         if mapView.showsUserLocation {

@@ -9,11 +9,20 @@
 import Foundation
 import CoreLocation
 import RxSwift
+import Action
 
 final class MapViewModel: BaseViewModel {
     
     let switchTitle = BehaviorSubject(value: "Grabar ruta")
     let addJourneyUseCase = AddJourneyUseCaseImpl()
+    let drawPathAction: Action<[CLLocationCoordinate2D], [CLLocationCoordinate2D]> = Action { element in
+        return Observable.create({ observer -> Disposable in
+            observer.onNext(element)
+            observer.onCompleted()
+            return Disposables.create()
+        })
+    }
+    
     var coordinatesList: [CLLocationCoordinate2D] = []
     var startDate = Date()
     
@@ -36,6 +45,7 @@ final class MapViewModel: BaseViewModel {
     
     func addCoordinate(_ locations: [CLLocationCoordinate2D]) {
         coordinatesList.append(contentsOf: locations)
+        drawPathAction.execute(coordinatesList)
     }
     
     func initJourney() {
