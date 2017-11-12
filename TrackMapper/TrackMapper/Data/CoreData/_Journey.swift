@@ -5,7 +5,8 @@ import Foundation
 import CoreData
 
 public enum JourneyAttributes: String {
-    case date = "date"
+    case end = "end"
+    case start = "start"
 }
 
 public enum JourneyRelationships: String {
@@ -38,7 +39,10 @@ open class _Journey: NSManagedObject {
     // MARK: - Properties
 
     @NSManaged open
-    var date: Date?
+    var end: Date?
+
+    @NSManaged open
+    var start: Date?
 
     // MARK: - Relationships
 

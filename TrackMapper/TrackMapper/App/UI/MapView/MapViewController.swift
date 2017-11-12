@@ -32,9 +32,8 @@ class MapViewController: BaseViewController<MapViewModel>, MKMapViewDelegate {
         super.setupLayout()
         
         switchTitleLabel.font = UIFont.boldSystemFont(ofSize: 15)
-        switchTitleLabel.textColor = .blue
-        trackSwitch.tintColor = .white
-        trackSwitch.onTintColor = .blue
+        switchTitleLabel.textColor = .black
+        trackSwitch.isOn = false
     }
     
     override func setupRx() {
@@ -45,7 +44,7 @@ class MapViewController: BaseViewController<MapViewModel>, MKMapViewDelegate {
         trackSwitch.rx.isOn.subscribe(onNext: { [weak self] on in
             guard let `self` = self else { return }
             
-            self.viewModel.changeSwitchState(on)
+            on ? self.viewModel.initJourney() : self.viewModel.sendJourney()
         }).addDisposableTo(disposeBag)
     }
     
@@ -54,14 +53,24 @@ class MapViewController: BaseViewController<MapViewModel>, MKMapViewDelegate {
         mapView.showsUserLocation = (status == .authorizedAlways || status == .authorizedWhenInUse)
     }
     
+    private func setRegion() {
+        let viewRegion = MKCoordinateRegionMakeWithDistance(mapView.userLocation.location?.coordinate ?? MapViewController.baseCoordinate, MapViewController.baseRegionWidth, MapViewController.baseRegionWidth)
+        mapView.setRegion(mapView.regionThatFits(viewRegion), animated: true)
+    }
+    
     // MARK: - MKMapViewDelegate
     override func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         updatedUserLocation(with: status)
+        if mapView.showsUserLocation {
+            setRegion()
+        }
     }
 
     override func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let viewRegion = MKCoordinateRegionMakeWithDistance(mapView.userLocation.location?.coordinate ?? MapViewController.baseCoordinate, MapViewController.baseRegionWidth, MapViewController.baseRegionWidth)
-        mapView.setRegion(mapView.regionThatFits(viewRegion), animated: true)
+        setRegion()
+        if trackSwitch.isOn {
+            viewModel.addCoordinate(locations.map { $0.coordinate } )
+        }
     }
 }
 

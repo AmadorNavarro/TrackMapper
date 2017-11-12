@@ -7,6 +7,7 @@ import CoreData
 public enum CoordinateAttributes: String {
     case latitude = "latitude"
     case longitude = "longitude"
+    case position = "position"
 }
 
 public enum CoordinateRelationships: String {
@@ -43,6 +44,9 @@ open class _Coordinate: NSManagedObject {
 
     @NSManaged open
     var longitude: NSNumber?
+
+    @NSManaged open
+    var position: NSNumber?
 
     // MARK: - Relationships
 
