@@ -77,11 +77,11 @@ extension UIViewController: CLLocationManagerDelegate {
     }
     
     private func requiredAccessToGeoloation() {
-        let alertController = UIAlertController(title: "permission_location_title" , message: "permission_location_description", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "cancel", style: .default) { action in
+        let alertController = UIAlertController(title: "Localización desactivada" , message: "Tiene los permisos de localización desactivados. Es necesario para poder mejorar la experiencia con la aplicación, por favor, actívelos desde ajustes", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "cancelar", style: .default) { action in
             self.dismiss(animated: true)
         }
-        let OKAction = UIAlertAction(title: "settings", style: .cancel) { action in
+        let OKAction = UIAlertAction(title: "ajustes", style: .cancel) { action in
             if let settings = URL(string: UIApplicationOpenSettingsURLString) {
                 UIApplication.shared.open(settings, options: [:], completionHandler: nil)
             }
