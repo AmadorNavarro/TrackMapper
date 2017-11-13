@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  TrackMapper
 //
-//  Created by BeRepublic on 10/11/2017.
-//  Copyright © 2017 opentrends. All rights reserved.
+//  Created by Amador Navarro on 10/11/2017.
+//  Copyright © 2017 Amador Navarro. All rights reserved.
 //
 
 import UIKit
@@ -13,9 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = MapViewController()
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
